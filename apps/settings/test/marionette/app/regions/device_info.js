@@ -31,7 +31,8 @@ DeviceInfoPanel.Selectors = {
   'aboutPanel': '#about',
   'rootPanel': '#root',
   'deviceInfoBackBtn': '#about-moreInfo gaia-header',
-  'openSourceNoticesBackBtn': '#about-licensing gaia-header'
+  'openSourceNoticesBackBtn': '#about-licensing gaia-header',
+  'swUpdateFrequency': '#app.update.interval select'
 };
 
 DeviceInfoPanel.prototype = {
@@ -105,5 +106,9 @@ DeviceInfoPanel.prototype = {
 
   tapOpenSourceNoticesBackBtn: function() {
     this.waitForElement('openSourceNoticesBackBtn').tap(25, 25);
+  },
+
+  tapSwUpdateFrequencySelectOption: function(optionText) {
+    this.tapSelectOption('swUpdateFrequency', optionText);
   }
 };

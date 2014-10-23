@@ -56,4 +56,16 @@ marionette('check device information settings', function() {
     assert.ok(!deviceInfoPanel.isResetPhoneDialogVisible,
       'Reset phone dialog is hidden');
   });
+
+  test('check software updates frequency', function() {
+    deviceInfoPanel.tapSwUpdateFrequencySelectOption('daily');
+    assert.ok(deviceInfoPanel.swUpdateFrequency === 86400); 
+
+    deviceInfoPanel.tapSwUpdateFrequencySelectOption('weekly');
+    assert.ok(deviceInfoPanel.swUpdateFrequency === 604800); 
+
+    deviceInfoPanel.tapSwUpdateFrequencySelectOption('monthly');
+    assert.ok(deviceInfoPanel.swUpdateFrequency === 2592000); 
+  });
+    
 });
